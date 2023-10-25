@@ -11,7 +11,9 @@ export interface DemoSelectorProps {
     children?: React.ReactNode;
     label?: string;
     fullWidth?: boolean;
-    selectProps?: Pick<SelectProps, 'value' | 'onChange'>
+    handleChange?: (value: string | number | any) => void;
+    value?: string | number | any;
+    selectProps?: Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>
 }
 
 const DemoSelector = ({
@@ -20,7 +22,9 @@ const DemoSelector = ({
                           label,
                           color = 'primary',
                           fullWidth = true,
+                          value = '',
                           disabled,
+                          handleChange,
                           ...formControlProps
                       }: DemoSelectorProps & Omit<FormControlOwnProps, 'variant' | 'sx'>) => {
     return (
@@ -35,6 +39,7 @@ const DemoSelector = ({
                 }}>{label}</InputLabel>}
             <Select
                 notched
+                {...selectProps}
                 sx={{
                     '& .MuiSelect-icon': {
                         top: 0,
@@ -44,8 +49,8 @@ const DemoSelector = ({
                 IconComponent={(props) => (
                     <DownArrowIcon {...props} />
                 )}
-                value={selectProps?.value || ''}
-                onChange={selectProps?.onChange}
+                value={value || ''}
+                onChange={(e) => handleChange && handleChange(e.target.value)}
                 MenuProps={{
                     PaperProps: {
                         sx: {
