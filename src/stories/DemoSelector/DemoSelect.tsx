@@ -23,10 +23,9 @@ const DemoSelect = ({
                         placeholder = '',
                         ...props
                     }: DemoSelectProps & Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>) => {
+    console.log(value);
     return (
         <Select
-            displayEmpty={true}
-            renderValue={value => value?.length ? Array.isArray(value) ? value.join(', ') : value : placeholder}
             notched
             {...props}
             sx={{

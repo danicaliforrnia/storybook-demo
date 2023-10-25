@@ -27,7 +27,7 @@ const DemoSelector = ({
                           disabled,
                           handleChange,
                           ...formControlProps
-                      }: DemoSelectorProps & Omit<FormControlOwnProps, 'variant' | 'sx'>) => {
+                      }: DemoSelectorProps & Omit<FormControlOwnProps, 'variant'>) => {
     return (
         <FormControl
             fullWidth={fullWidth} variant="standard" {...formControlProps} disabled={disabled}>

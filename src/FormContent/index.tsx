@@ -4,8 +4,11 @@ import DemoButton from "../stories/DemoButton/DemoButton.tsx";
 import DemoSelector from "../stories/DemoSelector/DemoSelector.tsx";
 import DemoControlledCheckbox from "../stories/DemoControlledCheckbox/DemoControlledCheckbox.tsx";
 import DemoControlledRadio from "../stories/DemoControlledRadio/DemoControlledRadio.tsx";
+import {useState} from "react";
 
-const FormContent = ({index}: {index: number}) => {
+const FormContent = ({index}: { index: number }) => {
+    const [value, setValue] = useState();
+
     return (
         <Grid container spacing={2}>
             <Grid item container spacing={2} justifyContent="flex-start" alignItems="flex-end">
@@ -23,7 +26,7 @@ const FormContent = ({index}: {index: number}) => {
                     <DemoButton>Adulto (12+)</DemoButton>
                 </Grid>
 
-                <Grid item xs={7} sm>
+                <Grid item xs>
                     <DemoSelector label="SESSO" disabled placeholder="?">
                         <MenuItem value={1}>F</MenuItem>
                         <MenuItem value={2}>M</MenuItem>
@@ -32,7 +35,11 @@ const FormContent = ({index}: {index: number}) => {
                 </Grid>
 
                 <Grid item xs sm={12} md={8}>
-                    <DemoSelector label="TIPOLOGIA SISTEMAZIONE" fullWidth placeholder="Scegli Sistemazione">
+                    <DemoSelector value={value}
+                                  handleChange={value => setValue(value)}
+                                  label="TIPOLOGIA SISTEMAZIONE"
+                                  fullWidth
+                                  placeholder="Scegli Sistemazione">
                         <MenuItem value={1}>Option A</MenuItem>
                         <MenuItem value={2}>Option B</MenuItem>
                         <MenuItem value={3}>Option C</MenuItem>
@@ -42,7 +49,7 @@ const FormContent = ({index}: {index: number}) => {
 
             <Grid item container alignItems="center">
                 <Grid item xs sm={4}>
-                    <DemoControlledCheckbox label="Passeggero con Disabilita"/>
+                    <DemoControlledCheckbox label="Passeggero con Disabilità"/>
                 </Grid>
 
                 <Grid item xs={12} sm={8}>
