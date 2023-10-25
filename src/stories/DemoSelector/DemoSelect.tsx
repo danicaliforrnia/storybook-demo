@@ -10,7 +10,6 @@ export interface DemoSelectProps {
     disabled?: boolean;
     value?: string | number | any;
     children?: React.ReactNode;
-    placeholder?: string;
     handleChange?: (value: string | number | any) => void;
 }
 
@@ -20,10 +19,8 @@ const DemoSelect = ({
                         children,
                         handleChange,
                         disabled,
-                        placeholder = '',
                         ...props
                     }: DemoSelectProps & Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>) => {
-    console.log(value);
     return (
         <Select
             notched

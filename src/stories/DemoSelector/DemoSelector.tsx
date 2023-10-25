@@ -1,4 +1,4 @@
-import {FormControl, InputLabel, SimplePaletteColorOptions} from "@mui/material";
+import {FormControl, FormLabel, InputLabel, SimplePaletteColorOptions} from "@mui/material";
 import * as React from "react";
 import {SelectProps} from "@mui/material/Select/Select";
 import {PaletteColorKey} from "../constants.ts";
@@ -39,14 +39,30 @@ const DemoSelector = ({
                     color: (theme) => (theme.palette[color as PaletteColorKey] as SimplePaletteColorOptions).main,
                     fontWeight: 'bold'
                 }}>{label}</InputLabel>}
-                <DemoSelect color={color}
-                            disabled={disabled}
-                            handleChange={handleChange}
-                            value={value}
-                            placeholder={placeholder}
-                            {...selectProps}>
-                    {children}
-                </DemoSelect>
+            {!value && <FormLabel
+                onClick={(e) => e.preventDefault()}
+                sx={{
+                    marginLeft: '0.71em',
+                    marginTop: '2em',
+                    paddingLeft: '0.5em',
+                    paddingRight: '0.44em',
+                    fontSize: 16,
+                    zIndex: 2,
+                    position: 'absolute',
+                    color: '#BDBDBD !important',
+                    cursor: 'pointer',
+                    pointerEvents: 'none'
+                }}
+            >
+                {placeholder}
+            </FormLabel>}
+            <DemoSelect color={color}
+                        disabled={disabled}
+                        handleChange={handleChange}
+                        value={value}
+                        {...selectProps}>
+                {children}
+            </DemoSelect>
         </FormControl>
     )
 }
