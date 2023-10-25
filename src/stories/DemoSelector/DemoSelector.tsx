@@ -37,7 +37,8 @@ const DemoSelector = ({
                 notched
                 sx={{
                     '& .MuiSelect-icon': {
-                        top: 0
+                        top: 0,
+                        marginRight: 2
                     }
                 }}
                 IconComponent={(props) => (
