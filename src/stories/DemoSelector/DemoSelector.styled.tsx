@@ -11,7 +11,7 @@ export const DemoSelectorStyled = styled(InputBase)(({theme, ...props}) => ({
         backgroundColor: theme.palette.background.paper,
         border: '2px solid',
         fontSize: 16,
-        padding: '10px 26px 10px 12px',
+        padding: '6px 18px 6px 18px',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
         borderColor: !props.disabled && (theme.palette[props.color as PaletteColorKey] as SimplePaletteColorOptions).main,
         color: !props.disabled && (theme.palette[props.color as PaletteColorKey] as SimplePaletteColorOptions).main,

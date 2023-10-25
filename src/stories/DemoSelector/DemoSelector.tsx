@@ -37,9 +37,10 @@ const DemoSelector = ({
                     color: (theme) => (theme.palette[color as PaletteColorKey] as SimplePaletteColorOptions).main,
                     fontWeight: 'bold'
                 }}>{label}</InputLabel>}
-            <DemoSelect color={color} disabled={disabled} {...selectProps} handleChange={handleChange} value={value}>
-                {children}
-            </DemoSelect>
+                <DemoSelect color={color} disabled={disabled} {...selectProps} handleChange={handleChange}
+                            value={value}>
+                    {children}
+                </DemoSelect>
         </FormControl>
     )
 }

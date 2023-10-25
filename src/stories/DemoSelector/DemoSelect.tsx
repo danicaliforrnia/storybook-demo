@@ -23,11 +23,13 @@ const DemoSelect = ({
                     }: DemoSelectProps & Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>) => {
     return (
         <Select
+            displayEmpty={true}
+            renderValue={value => value?.length ? Array.isArray(value) ? value.join(', ') : value : 'placeholder'}
             notched
             {...props}
             sx={{
                 '& .MuiSelect-icon': {
-                    top: 0,
+                    top: -6,
                     marginRight: 2
                 }
             }}
