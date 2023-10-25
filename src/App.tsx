@@ -13,16 +13,17 @@ function App() {
     return (
         <Box sx={{minWidth: matches ? '80vw' : '955px'}}>
             <DemoAccordion title="SISTEMAZIONE PASSEGGERI">
-                <FormTitle firstText="SITEMAZIONI" secondText="ITINERARIO ANDATA"/>
+                <FormTitle firstText="SITEMAZIONI" secondText="ITINERARIO ANDATA" boxSx={{textAlign: 'center'}}/>
                 {
                     [...Array(3).keys()].map(index => (
                         <FormContent index={index + 1}/>
                     ))
                 }
                 <FormTitle firstText="SERVIZI" secondText="EXTRA" boxSx={{
-                    marginTop: 2
+                    marginTop: 2,
+                    textAlign: 'center'
                 }}/>
-                <Box display="flex" alignItems="center" marginBottom={4}>
+                <Box marginBottom={4}>
                     <Typography display="inline" align="left" color="secondary" fontWeight="bold">Nota: <Typography
                         display="inline" align="left" color="primary">Per portare il proprio animale domestico è
                         necessario acquistare,

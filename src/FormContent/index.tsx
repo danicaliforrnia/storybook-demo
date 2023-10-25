@@ -24,7 +24,7 @@ const FormContent = ({index}: {index: number}) => {
                 </Grid>
 
                 <Grid item xs={7} sm>
-                    <DemoSelector label="SESSO" disabled>
+                    <DemoSelector label="SESSO" disabled placeholder="?">
                         <MenuItem value={1}>F</MenuItem>
                         <MenuItem value={2}>M</MenuItem>
                         <MenuItem value={3}>Other</MenuItem>
@@ -32,7 +32,7 @@ const FormContent = ({index}: {index: number}) => {
                 </Grid>
 
                 <Grid item xs sm={12} md={8}>
-                    <DemoSelector label="TIPOLOGIA SISTEMAZIONE" fullWidth>
+                    <DemoSelector label="TIPOLOGIA SISTEMAZIONE" fullWidth placeholder="Scegli Sistemazione">
                         <MenuItem value={1}>Option A</MenuItem>
                         <MenuItem value={2}>Option B</MenuItem>
                         <MenuItem value={3}>Option C</MenuItem>
@@ -41,7 +41,7 @@ const FormContent = ({index}: {index: number}) => {
             </Grid>
 
             <Grid item container alignItems="center">
-                <Grid item>
+                <Grid item xs sm={4}>
                     <DemoControlledCheckbox label="Passeggero con Disabilita"/>
                 </Grid>
 
