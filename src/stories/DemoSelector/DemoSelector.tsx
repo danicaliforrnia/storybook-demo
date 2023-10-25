@@ -27,7 +27,8 @@ const DemoSelector = ({
                           ...formControlProps
                       }: DemoSelectorProps & Omit<FormControlOwnProps, 'variant' | 'sx'>) => {
     return (
-        <FormControl fullWidth={fullWidth} sx={{m: 1}} variant="standard" {...formControlProps} disabled={disabled}>
+        <FormControl
+            fullWidth={fullWidth} variant="standard" {...formControlProps} disabled={disabled}>
             {label && <InputLabel
                 disableAnimation
                 shrink

@@ -1,21 +1,16 @@
-import {ReactNode} from "react";
 import {Typography} from "@mui/material";
+import {TypographyOwnProps} from "@mui/material/Typography/Typography";
 
-
-export interface DemoTitleProps {
-    children?: ReactNode;
-    color?: 'primary' | 'secondary';
-    align?: 'inherit' | 'left' | 'center' | 'right' | 'justify';
+export type DemoTitleProps = Pick<TypographyOwnProps, 'color' | 'align' | 'sx' | 'children'> & {
     inline?: boolean
 }
 
-const DemoTitle = ({children, color = 'primary', align = 'inherit', inline = false}: DemoTitleProps) => {
+const DemoTitle = ({children, inline = false, ...props}: DemoTitleProps) => {
     return (
         <Typography display={inline ? 'inline' : ''}
-                    color={color}
+                    {...props}
                     fontSize={24}
-                    fontWeight={700}
-                    align={align}>{children}</Typography>
+                    fontWeight={700}>{children}</Typography>
     )
 }
 
