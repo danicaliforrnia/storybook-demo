@@ -1,7 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import DemoControlledRadio from "./DemoControlledRadio.tsx";
-import {FormControl, FormGroup, FormLabel, RadioGroup} from "@mui/material";
-import React, {useState} from "react";
+import {FormControl, FormLabel, RadioGroup} from "@mui/material";
 
 const meta = {
     title: 'DemoControlledRadio',
@@ -23,17 +22,15 @@ export const Basic: Story = {
     }
 };
 
+// @ts-ignore
 export const Group: Story = {
     render: () => {
-        const [value, setValue] = useState("A");
         return (
             <FormControl>
                 <FormLabel id="demo-controlled-radio-">Radio Group</FormLabel>
                 <RadioGroup
                     aria-labelledby="demo-controlled-radio"
                     name="controlled-radio-buttons-group"
-                    value={value}
-                    onChange={(_, radioValue) => setValue(radioValue)}
                 >
                     <DemoControlledRadio value="A" label="A"/>
                     <DemoControlledRadio value="B" label="B"/>
