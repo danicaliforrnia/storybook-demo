@@ -29,7 +29,7 @@ function App() {
                         oltre al
                         biglietto per l’animale, anche il servizio PET KIT</Typography></Typography>
                 </Box>
-                <Grid container spacing={2} alignItems="center">
+                <Grid container spacing={2} alignItems="flex-end">
                     <Grid item sm={4} xs={12}>
                         <DemoSelector label="SELEZIONA" disabled>
                             <MenuItem value={1}>F</MenuItem>

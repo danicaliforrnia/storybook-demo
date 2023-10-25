@@ -18,7 +18,7 @@ const FormContent = ({index}: {index: number}) => {
                 </Grid>
             </Grid>
 
-            <Grid item container spacing={2} alignItems="center">
+            <Grid item container spacing={2} alignItems="flex-end">
                 <Grid item>
                     <DemoButton>Adulto (12+)</DemoButton>
                 </Grid>
