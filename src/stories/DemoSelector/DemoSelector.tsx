@@ -12,6 +12,7 @@ export interface DemoSelectorProps {
     children?: React.ReactNode;
     handleChange?: (value: string | number | any) => void;
     value?: string | number | any;
+    placeholder?: string;
     selectProps?: Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>
 }
 
@@ -19,6 +20,7 @@ const DemoSelector = ({
                           selectProps,
                           children,
                           label,
+                          placeholder,
                           color = 'primary',
                           fullWidth = true,
                           value = '',
@@ -37,8 +39,12 @@ const DemoSelector = ({
                     color: (theme) => (theme.palette[color as PaletteColorKey] as SimplePaletteColorOptions).main,
                     fontWeight: 'bold'
                 }}>{label}</InputLabel>}
-                <DemoSelect color={color} disabled={disabled} {...selectProps} handleChange={handleChange}
-                            value={value}>
+                <DemoSelect color={color}
+                            disabled={disabled}
+                            handleChange={handleChange}
+                            value={value}
+                            placeholder={placeholder}
+                            {...selectProps}>
                     {children}
                 </DemoSelect>
         </FormControl>

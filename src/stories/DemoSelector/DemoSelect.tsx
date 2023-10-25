@@ -10,6 +10,7 @@ export interface DemoSelectProps {
     disabled?: boolean;
     value?: string | number | any;
     children?: React.ReactNode;
+    placeholder?: string;
     handleChange?: (value: string | number | any) => void;
 }
 
@@ -19,18 +20,21 @@ const DemoSelect = ({
                         children,
                         handleChange,
                         disabled,
+                        placeholder = '',
                         ...props
                     }: DemoSelectProps & Pick<SelectProps, | 'defaultOpen' | 'defaultValue' | 'multiple'>) => {
     return (
         <Select
             displayEmpty={true}
-            renderValue={value => value?.length ? Array.isArray(value) ? value.join(', ') : value : 'placeholder'}
+            renderValue={value => value?.length ? Array.isArray(value) ? value.join(', ') : value : placeholder}
             notched
             {...props}
             sx={{
                 '& .MuiSelect-icon': {
-                    top: -6,
-                    marginRight: 2
+                    top: 4,
+                    marginRight: 2,
+                    height: 35,
+                    width: 35
                 }
             }}
             IconComponent={(props) => (
