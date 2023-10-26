@@ -43,6 +43,7 @@ function App() {
                     </Grid>
                 </Grid>
             </DemoAccordion>
+            <Typography marginTop={2}>Author: Daniel Stefanelli</Typography>
         </Box>
     )
 }
