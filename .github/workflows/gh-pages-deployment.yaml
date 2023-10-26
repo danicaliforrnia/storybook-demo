@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'src/**'
-      - '.github/workflows/gh-pages-deployment.yml'
+      - '.github/workflows/gh-pages-deployment.yaml'
 
 jobs:
   build:

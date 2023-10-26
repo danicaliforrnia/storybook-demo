@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'src/stories/**'
-      - '.github/workflows/chromatic-deployment.yml'
+      - '.github/workflows/chromatic-deployment.yaml'
 
 jobs:
   deploy:
