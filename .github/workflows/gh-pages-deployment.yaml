@@ -1,11 +1,11 @@
-name: 'Chromatic Deployment'
+name: 'GitHub Pages Deployment'
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/stories/**'
-      - '.github/workflows/chromatic-deployment.yml'
+      - 'src/src/**'
+      - '.github/workflows/gh-pages-deployment.yml'
 
 jobs:
   deploy:
@@ -18,7 +18,4 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - run:  npm run deploy -- -m "Deploy React app to GitHub Pages"
